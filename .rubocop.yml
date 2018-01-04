@@ -30,3 +30,9 @@ Style/Documentation:
 
 Style/Next:
   Enabled: false
+
+Style/MultilineIfModifier:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false

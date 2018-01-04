@@ -10,10 +10,10 @@ Gem::Specification.new do |s|
   s.description            = 'This plugin provides a handler for clearing the influxdb handoff dir'
   s.email                  = '<ajroyle@gmail.com>'
   s.executables            = Dir.glob('bin/**/*.rb').map { |file| File.basename(file) }
-  s.files                  = Dir.glob('{bin,lib}/**/*') + %w(LICENSE README.md CHANGELOG.md)
-  s.homepage               = 'https://github.com/ve-interactive/sensu-plugins-influxdb-handoff'
+  s.files                  = Dir.glob('{bin,lib}/**/*') + %w[LICENSE README.md CHANGELOG.md]
+  s.homepage               = 'https://github.com/ve-global/sensu-plugins-influxdb-handoff'
   s.license                = 'MIT'
-  s.metadata               = { 'maintainer'         => 've-interactive',
+  s.metadata               = { 'maintainer'         => 've-global',
                                'development_status' => 'active',
                                'production_status'  => 'unstable - testing recommended',
                                'release_draft'      => 'false',
@@ -27,16 +27,15 @@ Gem::Specification.new do |s|
   s.test_files             = s.files.grep(%r{^(test|spec|features)/})
   s.version                = SensuPluginsInfluxDBHandoff::Version::VER_STRING
 
+  s.add_runtime_dependency 'net-ssh',      '~> 4.1'
   s.add_runtime_dependency 'sensu-plugin', '~> 1.2'
-  s.add_runtime_dependency 'net-ssh', '~> 4.1'
-
-  s.add_development_dependency 'codeclimate-test-reporter', '~> 0.4'
   s.add_development_dependency 'bundler',                   '~> 1.7'
+  s.add_development_dependency 'codeclimate-test-reporter', '~> 0.4'
   s.add_development_dependency 'github-markup',             '~> 1.3'
   s.add_development_dependency 'pry',                       '~> 0.10'
   s.add_development_dependency 'rake',                      '~> 10.0'
   s.add_development_dependency 'redcarpet',                 '~> 3.2'
   s.add_development_dependency 'rspec',                     '~> 3.1'
-  s.add_development_dependency 'rubocop',                   '~> 0.40.0'
-  s.add_development_dependency 'yard',                      '~> 0.8'
+  s.add_development_dependency 'rubocop',                   '~> 0.49.0'
+  s.add_development_dependency 'yard',                      '~> 0.9.11'
 end

@@ -64,7 +64,6 @@ class InfluxDBHandoff < Sensu::Handler
     wait_for_ok(host)
 
     puts 'handoff dir handler finished'
-
   rescue => error
     STDERR.puts "influxdb-handoff: #{error}"
   end
@@ -74,7 +73,7 @@ class InfluxDBHandoff < Sensu::Handler
   end
 
   def throw_if_not_ok(result)
-    raise "sshexec error: STDOUT: #{result.stdout}, STDERR: #{result.stderr}, code: #{result.exit_status}" unless result.exit_status == 0
+    raise "sshexec error: STDOUT: #{result.stdout}, STDERR: #{result.stderr}, code: #{result.exit_status}" unless result.exit_status.zero?
   end
 
   def wait_for_ok(host)

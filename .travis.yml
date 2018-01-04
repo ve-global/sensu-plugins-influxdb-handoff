@@ -23,4 +23,4 @@ deploy:
     tags: true
     all_branches: true
     rvm: 2.3.0
-    repo: ve-interactive/sensu-plugins-influxdb-handoff
+    repo: ve-global/sensu-plugins-influxdb-handoff
